@@ -5,10 +5,12 @@ import styled from "styled-components";
 const Container = styled.div`
   background-color: #F4F4F4;
   width: 100vw;
-  height: 738px;
+  padding-bottom:100px;
+  padding-top: 70px;
 `;
 
 const ContentContainer = styled.div`
+  padding:0;
   max-width: 1100px;
   margin: 0 auto;
   height: 100%;
@@ -33,9 +35,9 @@ const DarkPinkSpan = styled.span`
   color: #af0c48;
 `;
 const MainContentArea = styled.div`
-  height: 80%;
+  padding-top: 20px;
   display: flex;
-  justify-content:center;
+  justify-content:space-between;
   align-items: center;
 `;
 const InfoArea = styled.div`
@@ -56,7 +58,7 @@ const BigText = styled.p`
 `;
 const SocialMediaIcons = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 20px;
 `;
 const BottomText = styled.p`
   font-size: 18px;
@@ -67,6 +69,7 @@ const BottomText = styled.p`
 const PhotoArea = styled.div`
   width: 340px;
   height: 340px;
+  margin-top: 80px;
 `;
 const Photo = styled.img`
   width: 100%;
