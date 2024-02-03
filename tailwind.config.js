@@ -13,6 +13,9 @@ export default {
         textLightBlack: "#0a0a14",
       },
     },
+    fontFamily: {
+      playfair: ["Playfair Display", "ui-serif"],
+    },
   },
   plugins: [],
 };

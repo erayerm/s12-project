@@ -1,34 +1,6 @@
-import styled from "styled-components";
 import Skill from "./Skill";
-
-const Container = styled.div`
-  width: 100vw;
-  
-`;
-const ContentContainer = styled.div`
-  padding: 80px 0 130px 0;
-  max-width: 1000px;
-  margin: 0 auto;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-`;
-const SkillsContainer = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  
-`;
-const SkillsTitle = styled.h2`
-  color: #0a0a14;
-  font-family: Inter;
-  font-size: 48px;
-  font-weight: 500;
-  letter-spacing: 0.48px;
-  margin: 58px;
-`;
+import { useSelector } from "react-redux";
+import { data } from "../mock/data";
 
 const skills = [
   {
@@ -54,20 +26,23 @@ const skills = [
   {
     name: "FIGMA",
     photo: "./figma-logo.png",
-  },
+  }
 ];
-export default function Skills() {
 
+export default function Skills() {
+  const lang = useSelector((store) => store.lang);
   return (
-    <Container>
-      <ContentContainer>
-        <SkillsTitle>Skills</SkillsTitle>
-        <SkillsContainer>
+    <div className="w-screen dark:bg-[#484148]">
+      <div className="pt-5 pb-36 px-0 max-w-[1000px] mx-auto my-0 flex flex-col align-center">
+        <h2 className="text-textLightBlack dark:text-white text-center text-[48px] font-medium tracking-wide m-[58px]">
+          {data[lang].skills.title}
+        </h2>
+        <div className="w-full flex items-center justify-between flex-wrap">
           {skills.map((item, index) => {
-            return <Skill key={index} name={item.name} photo={item.photo} />;
+            return <Skill key={index} data={item} />;
           })}
-        </SkillsContainer>
-      </ContentContainer>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -1,21 +1,23 @@
+import { useDispatch, useSelector } from "react-redux";
 import "./ToggleButton.css"
-import styled from "styled-components"
+import { data } from "../mock/data";
+import { toggleDarkMode } from "../store/actions";
 
-const ContainerLabel = styled.label`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-`;
 export default function ToggleButton() {
+    const lang = useSelector((store) => store.lang);
+    const darkMode = useSelector((store) => store.darkMode);
+    const dispatch = useDispatch();
+    const handleChange = () => {
+      dispatch(toggleDarkMode());
+    }
     return (
-      <ContainerLabel>
+      <div className="flex items-center gap-2.5">
         <label className="switch">
-          <input type="checkbox" />
+          <input type="checkbox" checked={darkMode} onChange={handleChange} />
           <span className="slider" />
         </label>
-        DARK MODE
-      </ContainerLabel>
+        {data[lang].navBar[(darkMode ? "darkModeOn" : "darkModeOff")]}
+      </div>
     );
 
 }
