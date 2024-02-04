@@ -5,27 +5,27 @@ import { data } from "../mock/data";
 const skills = [
   {
     name: "JAVASCRIPT",
-    photo: "./js-logo.png",
+    photo: "./logos/js-logo.svg",
   },
   {
     name: "REACT",
-    photo: "./react-logo.png",
+    photo: "./logos/react-logo.svg",
   },
   {
     name: "REDUX",
-    photo: "./redux-logo.jpeg",
+    photo: "./logos/redux-logo.svg",
   },
   {
     name: "NODE",
-    photo: "./node-logo.png",
+    photo: "./logos/node-logo.svg",
   },
   {
     name: "VS CODE",
-    photo: "./vs-logo.png",
+    photo: "./logos/vs-logo.svg",
   },
   {
     name: "FIGMA",
-    photo: "./figma-logo.png",
+    photo: "./logos/figma-logo.svg",
   }
 ];
 

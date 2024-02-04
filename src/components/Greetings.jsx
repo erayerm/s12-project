@@ -18,11 +18,11 @@ export default function Greetings() {
       />
       <img
         className="absolute bottom-[10%] right-0"
-        src="./shapes/greetings-3-rectangle.png"
+        src="./shapes/greetings-3-rectangle.svg"
       />
       <img
         className="absolute bottom-[-60px] right-[25%]"
-        src="./shapes/greetings-4-circle.png"
+        src="./shapes/greetings-4-circle.svg"
       />
       <div className="p-0 max-w-[1100px] mx-auto my-0 h-full">
         <nav className="flex items-center gap-4 justify-end text-[15px] font-bold tracking-[0.05em] dark:text-textDarkGray text-black">
@@ -40,7 +40,7 @@ export default function Greetings() {
             <div className="relative">
               <img
                 className="absolute top-[35px] left-[-10px] z-10"
-                src="./shapes/greetings-2-rectangle.png"
+                src="./shapes/greetings-2-rectangle.svg"
               />
               <p className="relative z-20 text-textLightBlack dark:text-white text-[42px] font-medium tracking-[0.01em] w-[85%] mb-14">
                 {data[lang].greetings.bigText}
