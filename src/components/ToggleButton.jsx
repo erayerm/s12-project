@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./ToggleButton.css"
-import { data } from "../mock/data";
 import { toggleDarkMode } from "../store/actions";
 
 export default function ToggleButton() {
     const lang = useSelector((store) => store.lang);
     const darkMode = useSelector((store) => store.darkMode);
+    const data = useSelector((store) => store.data);
     const dispatch = useDispatch();
     const handleChange = () => {
       dispatch(toggleDarkMode());

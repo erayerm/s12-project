@@ -9,10 +9,9 @@ export const GlobalActionTypes = {
   setData: "SET_DATA"
 };
 
-const localKey = "darkMode"
-const localDarkMode = localStorage.getItem(localKey);
+const localDarkMode = localStorage.getItem("darkMode");
 const initialState = {
-  lang: "en",
+  lang: (((navigator.language || navigator.userLanguage) === "tr-TR") || ((navigator.language || navigator.userLanguage) === "tr")) ? "tr" : "en" ,
   darkMode: localDarkMode === null ? false : JSON.parse(localDarkMode),
   data: {},
 };
@@ -26,7 +25,7 @@ const reducer = (state = initialState, action) => {
           lang: state.lang === "en" ? "tr" : "en"
         };
       case GlobalActionTypes.toggleDarkMode:
-        localStorage.setItem(localKey, !state.darkMode);
+        localStorage.setItem("darkMode", !state.darkMode);
         return {
           ...state,
           darkMode: !state.darkMode,

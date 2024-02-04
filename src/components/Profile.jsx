@@ -1,8 +1,9 @@
-import {data} from "../mock/data"
 import { useSelector } from "react-redux";
 
 export default function Profile() {
   const lang = useSelector((store) => store.lang);
+  const data = useSelector((store) => store.data);
+
   return (
     <>
       <div className="w-screen dark:bg-bgDarkBlack bg-bgLightGray py-20">

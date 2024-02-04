@@ -1,6 +1,5 @@
 import Skill from "./Skill";
 import { useSelector } from "react-redux";
-import { data } from "../mock/data";
 
 const skills = [
   {
@@ -31,6 +30,8 @@ const skills = [
 
 export default function Skills() {
   const lang = useSelector((store) => store.lang);
+  const data = useSelector((store) => store.data);
+
   return (
     <div className="relative w-screen dark:bg-[#484148]">
       <img

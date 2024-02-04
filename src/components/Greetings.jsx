@@ -1,12 +1,11 @@
 import ToggleButton from "./ToggleButton";
 import { useDispatch, useSelector } from "react-redux";
-import { changeLanguage } from "../store/actions";
-import { data } from "../mock/data";
+import { changeLanguage} from "../store/actions";
 
 export default function Greetings() {
-  const lang = useSelector((store) => store.lang);
-  //const data2 = useSelector((store) => store.data);
   const dispatch = useDispatch();
+  const lang = useSelector((store) => store.lang);
+  const data = useSelector((store) => store.data)
   const handleLanguage = () => {
     dispatch(changeLanguage());
   };

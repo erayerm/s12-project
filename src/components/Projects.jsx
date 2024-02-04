@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
-import { data } from "../mock/data";
 import Project from "./Project";
 
 export default function Projects() {
   const lang = useSelector((store) => store.lang);
+  const data = useSelector((store) => store.data);
 
   return (
     <div className="w-screen dark:bg-[#484148] pb-36">
