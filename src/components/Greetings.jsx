@@ -21,7 +21,7 @@ export default function Greetings() {
         src="./shapes/greetings-3-rectangle.svg"
       />
       <img
-        className="absolute bottom-[-60px] right-[25%]"
+        className="absolute bottom-[-60px] right-[25%] z-30"
         src="./shapes/greetings-4-circle.svg"
       />
       <div className="p-0 max-w-[1100px] mx-auto my-0 h-full">

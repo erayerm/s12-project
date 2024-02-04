@@ -35,10 +35,14 @@ export default function Profile() {
                 )}
               </div>
             </div>
-            <div className="pt-10 w-[500px]">
-              <h3 className="font-playfair text-2xl dark:text-white font-normal tracking-[0.015em]">
+            <div className="relative pt-10 w-[500px]">
+              <h3 className="relative z-20 font-playfair text-2xl dark:text-white font-normal tracking-[0.015em]">
                 {data[lang].profile.aboutMe.title}
               </h3>
+              <img
+                className="absolute top-[20%] left-[-5px] z-10"
+                src="./shapes/profile-1-rectangle.svg"
+              />
               <div className="w-[90%]">
                 {data[lang].profile.aboutMe.content.map((item, index) => {
                   return (

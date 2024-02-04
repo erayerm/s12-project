@@ -32,7 +32,15 @@ const skills = [
 export default function Skills() {
   const lang = useSelector((store) => store.lang);
   return (
-    <div className="w-screen dark:bg-[#484148]">
+    <div className="relative w-screen dark:bg-[#484148]">
+      <img
+        className="absolute bottom-[30%] left-0"
+        src="./shapes/skills-1-rectangle.svg"
+      />
+      <img
+        className="absolute bottom-[-90px] right-0"
+        src="./shapes/skills-2-circle.svg"
+      />
       <div className="pt-5 pb-36 px-0 max-w-[1000px] mx-auto my-0 flex flex-col align-center">
         <h2 className="text-textLightBlack dark:text-white text-center text-[48px] font-medium tracking-wide m-[58px]">
           {data[lang].skills.title}

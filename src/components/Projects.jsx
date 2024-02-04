@@ -24,9 +24,16 @@ export default function Projects() {
         </div>
       </div>
       <div className="pt-60 flex max-w-[650px] my-0 mx-auto items-center gap-10">
-        <p className="text-5xl dark:text-white">
-          {data[lang].projects.letsWork}
-        </p>
+        <div className="relative">
+          <img
+            className="absolute top-[30px] left-[150px] z-10"
+            src="./shapes/projects-1-rectangle.svg"
+          />
+          <p className="relative z-20 text-5xl dark:text-white">
+            {data[lang].projects.letsWork}
+          </p>
+        </div>
+
         <ul>
           <li className="text-[#82BBFF]">Github</li>
           <li className="text-[#419CCB]">Linkedin</li>
