@@ -28,7 +28,29 @@ export default function Greetings() {
           <ToggleButton />
           <p>|</p>
           <p className="cursor-pointer" onClick={handleLanguage}>
-            {data[lang].navBar.lang}
+            {data[lang].navBar.lang.map((item,index)=>{
+                if (data[lang].navBar.langPink === "pink") {
+                  if (index === 0 || index % 2 === 0) {
+                    return (
+                      <span key={index} className="text-pink-500">
+                        {item}
+                      </span>
+                    );
+                  } else {
+                    return item;
+                  }
+                } else {
+                  if (index === 0 || index % 2 === 0) {
+                    return item;
+                  } else {
+                    return (
+                      <span key={index} className="text-pink-500">
+                        {item}
+                      </span>
+                    );
+                  }
+                }
+              })}
           </p>
         </nav>
         <div className="pt-20 flex justify-between">
@@ -75,7 +97,29 @@ export default function Greetings() {
             </div>
 
             <p className="text-lg font-normal tracking-[0.05em] max-w-[540px]">
-              {data[lang].greetings.bottomText}
+              {data[lang].greetings.bottomText.map((item,index)=>{
+                if (data[lang].greetings.bottomTextPink === "pink") {
+                  if (index === 0 || index % 2 === 0) {
+                    return (
+                      <span key={index} className="text-pink-500">
+                        {item}
+                      </span>
+                    );
+                  } else {
+                    return item;
+                  }
+                } else {
+                  if (index === 0 || index % 2 === 0) {
+                    return item;
+                  } else {
+                    return (
+                      <span key={index} className="text-pink-500">
+                        {item}
+                      </span>
+                    );
+                  }
+                }
+              })}
             </p>
           </div>
           <div>
