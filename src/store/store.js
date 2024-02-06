@@ -8,12 +8,17 @@ export const GlobalActionTypes = {
   toggleDarkMode: "DARK_MODE",
   setData: "SET_DATA"
 };
-
+const browserDefaultDark = window.matchMedia('(prefers-color-scheme: dark)');
 const localDarkMode = localStorage.getItem("darkMode");
 const initialState = {
-  lang: (((navigator.language || navigator.userLanguage) === "tr-TR") || ((navigator.language || navigator.userLanguage) === "tr")) ? "tr" : "en" ,
-  darkMode: localDarkMode === null ? false : JSON.parse(localDarkMode),
-  data: {},
+  lang:
+    (navigator.language || navigator.userLanguage) === "tr-TR" ||
+    (navigator.language || navigator.userLanguage) === "tr"
+      ? "tr"
+      : "en",
+  darkMode:
+    localDarkMode === null ? browserDefaultDark.matches : JSON.parse(localDarkMode),
+  data: [],
 };
 
 
