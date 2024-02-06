@@ -11,8 +11,8 @@ export default function Profile() {
           <h2 className="text-4xl font-medium tracking-[0.01em] dark:text-white ">
             {data[lang].profile.title}
           </h2>
-          <div className="w-full flex justify-between pt-10">
-            <div className="pl-10 pb-10 max-w-[520px] w-6/12 bg-white dark:bg-[#525252] rounded-xl shadow-[10px_10px_rgba(82,82,82,0.5)]">
+          <div className="w-full flex flex-wrap gap-10 justify-center pt-10">
+            <div className="w-[500px] pl-10 pb-10 bg-white dark:bg-[#525252] rounded-xl shadow-[10px_10px_rgba(82,82,82,0.5)]">
               <h3 className="text-[#ea2678] font-playfair text-2xl font-normal tracking-[0.015em] pt-10">
                 {data[lang].profile.basicInformation.title}
               </h3>
@@ -36,15 +36,15 @@ export default function Profile() {
                 )}
               </div>
             </div>
-            <div className="relative pt-10 w-[500px]">
+            <div className="relative pt-10 px-5 w-[500px] text-center lg:text-left">
               <h3 className="relative z-20 font-playfair text-2xl dark:text-white font-normal tracking-[0.015em]">
                 {data[lang].profile.aboutMe.title}
               </h3>
               <img
-                className="absolute top-[20%] left-[-5px] z-10"
+                className="absolute top-[20%] left-[-5px] z-10 hidden lg:block"
                 src="./shapes/profile-1-rectangle.svg"
               />
-              <div className="w-[90%]">
+              <div className="w-full">
                 {data[lang].profile.aboutMe.content.map((item, index) => {
                   return (
                     <p

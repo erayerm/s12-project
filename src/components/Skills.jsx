@@ -35,7 +35,7 @@ export default function Skills() {
   return (
     <div className="relative w-screen dark:bg-[#484148]">
       <img
-        className="absolute bottom-[30%] left-0"
+        className="absolute bottom-[30%] left-0 xl:block hidden"
         src="./shapes/skills-1-rectangle.svg"
       />
       <img
@@ -46,7 +46,7 @@ export default function Skills() {
         <h2 className="text-textLightBlack dark:text-white text-center text-[48px] font-medium tracking-wide m-[58px]">
           {data[lang].skills.title}
         </h2>
-        <div className="w-full flex items-center justify-between flex-wrap">
+        <div className="w-full flex justify-center items-center gap-10 flex-wrap px-5">
           {skills.map((item, index) => {
             return <Skill key={index} data={item} />;
           })}
