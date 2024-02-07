@@ -4,7 +4,7 @@ import { thunk } from "redux-thunk";
 export const GlobalActionTypes = {
   changeLanguage: "CHANGE_LANG",
   toggleDarkMode: "DARK_MODE",
-  setData: "SET_DATA",
+  setData: "SET_DATA"
 };
 const browserDefaultDark = window.matchMedia("(prefers-color-scheme: dark)");
 const localDarkMode = localStorage.getItem("darkMode");
@@ -23,15 +23,20 @@ const initialState = {
       ? browserDefaultDark.matches
       : JSON.parse(localDarkMode),
   data: [],
+  currentData: [],
 };
-
+let newLang;
 const reducer = (state = initialState, action) => {
+
   switch (action.type) {
+
     case GlobalActionTypes.changeLanguage:
-      localStorage.setItem("language", state.lang === "en" ? "tr" : "en");
+      newLang = state.lang === "en" ? "tr" : "en";
+      localStorage.setItem("language", newLang);
       return {
         ...state,
-        lang: state.lang === "en" ? "tr" : "en",
+        lang: newLang,
+        currentData: { ...state.data[newLang] },
       };
     case GlobalActionTypes.toggleDarkMode:
       localStorage.setItem("darkMode", !state.darkMode);
@@ -43,6 +48,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         data: { ...action.payload },
+        currentData: { ...action.payload[state.lang] },
       };
     default:
       return state;

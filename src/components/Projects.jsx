@@ -2,22 +2,20 @@ import { useSelector } from "react-redux";
 import Project from "./Project";
 
 export default function Projects() {
-  const lang = useSelector((store) => store.lang);
-  const data = useSelector((store) => store.data);
-
+  const data = useSelector((store) => store.currentData);
   return (
     <div className="w-screen dark:bg-[#484148] pb-36">
       <div className="max-w-[1100px] my-0 mx-auto">
         <h3 className="pt-20 pb-10 text-center font-medium text-4xl dark:text-white">
-          {data[lang].projects.title}
+          {data.projects.title}
         </h3>
         <div className="flex flex-wrap gap-20 justify-center">
-          {data[lang].projects.project.map((projectObject, index) => {
+          {data.projects.project.map((projectObject, index) => {
             return (
               <Project
                 key={index}
                 projectObject={projectObject}
-                data={data[lang].projects}
+                data={data.projects}
               />
             );
           })}
@@ -26,11 +24,11 @@ export default function Projects() {
       <div className="pt-60 flex lg:flex-row flex-col lg:text-left text-center max-w-[650px] my-0 mx-auto p-5 items-center gap-10">
         <div className="relative">
           <img
-            className="absolute top-[30px] left-[150px] z-10"
+            className="absolute top-[30px] left-[18%] lg:left-[150px] z-10"
             src="./shapes/projects-1-rectangle.svg"
           />
           <p className="relative z-20 text-5xl dark:text-white">
-            {data[lang].projects.letsWork}
+            {data.projects.letsWork}
           </p>
         </div>
 

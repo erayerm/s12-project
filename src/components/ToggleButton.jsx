@@ -3,9 +3,8 @@ import "./ToggleButton.css"
 import { toggleDarkMode } from "../store/actions";
 
 export default function ToggleButton() {
-    const lang = useSelector((store) => store.lang);
     const darkMode = useSelector((store) => store.darkMode);
-    const data = useSelector((store) => store.data);
+    const data = useSelector((store) => store.currentData);
     const dispatch = useDispatch();
     const handleChange = () => {
       dispatch(toggleDarkMode());
@@ -16,7 +15,7 @@ export default function ToggleButton() {
           <input type="checkbox" checked={darkMode} onChange={handleChange} />
           <span className="slider" />
         </label>
-        {data[lang].navBar[(darkMode ? "darkModeOn" : "darkModeOff")]}
+        {data.navBar[(darkMode ? "darkModeOn" : "darkModeOff")]}
       </div>
     );
 

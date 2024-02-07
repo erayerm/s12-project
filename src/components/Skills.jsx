@@ -29,8 +29,7 @@ const skills = [
 ];
 
 export default function Skills() {
-  const lang = useSelector((store) => store.lang);
-  const data = useSelector((store) => store.data);
+  const data = useSelector((store) => store.currentData);
 
   return (
     <div className="relative w-screen dark:bg-[#484148]">
@@ -44,7 +43,7 @@ export default function Skills() {
       />
       <div className="pt-5 pb-36 px-0 max-w-[1000px] mx-auto my-0 flex flex-col align-center">
         <h2 className="text-textLightBlack dark:text-white text-center text-[48px] font-medium tracking-wide m-[58px]">
-          {data[lang].skills.title}
+          {data.skills.title}
         </h2>
         <div className="w-full flex justify-center items-center gap-10 flex-wrap px-5">
           {skills.map((item, index) => {

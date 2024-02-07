@@ -4,8 +4,7 @@ import { changeLanguage} from "../store/actions";
 
 export default function Greetings() {
   const dispatch = useDispatch();
-  const lang = useSelector((store) => store.lang);
-  const data = useSelector((store) => store.data)
+  const data = useSelector((store) => store.currentData);
   const handleLanguage = () => {
     dispatch(changeLanguage());
   };
@@ -28,8 +27,8 @@ export default function Greetings() {
           <ToggleButton />
           <p>|</p>
           <p className="cursor-pointer" onClick={handleLanguage}>
-            {data[lang].navBar.lang.map((item, index) => {
-              if (data[lang].navBar.langPink === "pink") {
+            {data.navBar.lang.map((item, index) => {
+              if (data.navBar.langPink === "pink") {
                 if (index === 0 || index % 2 === 0) {
                   return (
                     <span key={index} className="text-[#E92677]">
@@ -56,7 +55,7 @@ export default function Greetings() {
         <div className="pt-20 px-10 flex justify-center gap-10 flex-wrap text-center lg:flex-nowrap lg:text-left">
           <div className="text-black dark:text-white flex flex-col justify-center w-full">
             <p className="w-full text-3xl font-normal tracking-[.18em] mb-6">
-              {data[lang].greetings.hiText}
+              {data.greetings.hiText}
             </p>
             <div className="relative">
               <img
@@ -64,7 +63,7 @@ export default function Greetings() {
                 src="./shapes/greetings-2-rectangle.svg"
               />
               <p className="relative z-20 text-textLightBlack dark:text-white text-[42px] font-medium tracking-[0.01em] w-full mb-14">
-                {data[lang].greetings.bigText}
+                {data.greetings.bigText}
               </p>
             </div>
             <div className="flex gap-5 mx-auto mb-6 lg:mt-0 lg:mx-0">
@@ -101,8 +100,8 @@ export default function Greetings() {
             </div>
 
             <p className="text-lg font-normal tracking-[0.05em] w-full">
-              {data[lang].greetings.bottomText.map((item, index) => {
-                if (data[lang].greetings.bottomTextPink === "pink") {
+              {data.greetings.bottomText.map((item, index) => {
+                if (data.greetings.bottomTextPink === "pink") {
                   if (index === 0 || index % 2 === 0) {
                     return (
                       <span key={index} className="text-[#E92677]">
