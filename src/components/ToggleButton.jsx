@@ -6,7 +6,8 @@ export default function ToggleButton() {
     const darkMode = useSelector((store) => store.darkMode);
     const data = useSelector((store) => store.currentData);
     const dispatch = useDispatch();
-    const handleChange = () => {
+    const handleChange = () =>
+    {
       dispatch(toggleDarkMode());
     }
     return (
