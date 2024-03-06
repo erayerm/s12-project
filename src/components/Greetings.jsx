@@ -132,7 +132,7 @@ export default function Greetings() {
             <div className="mt-10 w-[340px] h-[340px] rounded-3xl shadow-[-20px_-20px_rgba(233,37,119,1)]">
               <img
                 className="aspect-square w-full h-full object-cover rounded-3xl"
-                src="./photo.png"
+                src="./photo.jpg"
                 alt="me_irl"
               />
             </div>
