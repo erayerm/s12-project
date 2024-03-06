@@ -1,12 +1,12 @@
 import ToggleButton from "./ToggleButton";
 import { useDispatch, useSelector } from "react-redux";
-import { changeLanguage} from "../store/actions";
+import { changeLanguageAction } from "../store/actions";
 
 export default function Greetings() {
   const dispatch = useDispatch();
   const data = useSelector((store) => store.currentData);
   const handleLanguage = () => {
-    dispatch(changeLanguage());
+    dispatch(changeLanguageAction());
   };
   return (
     <div className="w-screen relative pb-24 pt-[75px] dark:bg-bgDarkBlack bg-bgLightGray">
@@ -131,7 +131,7 @@ export default function Greetings() {
           <div>
             <div className="mt-10 w-[340px] h-[340px] rounded-3xl shadow-[-20px_-20px_rgba(233,37,119,1)]">
               <img
-                className="aspect-square w-full h-full object-cover rounded-3xl"
+                className="aspect-square w-full h-full object-cover object-top rounded-3xl"
                 src="./photo.jpg"
                 alt="me_irl"
               />

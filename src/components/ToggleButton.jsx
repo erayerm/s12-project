@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./ToggleButton.css"
-import { toggleDarkMode } from "../store/actions";
+import { toggleDarkModeAction } from "../store/actions";
 
 export default function ToggleButton() {
     const darkMode = useSelector((store) => store.darkMode);
@@ -8,7 +8,7 @@ export default function ToggleButton() {
     const dispatch = useDispatch();
     const handleChange = () =>
     {
-      dispatch(toggleDarkMode());
+      dispatch(toggleDarkModeAction());
     }
     return (
       <div className="flex items-center gap-2.5">
