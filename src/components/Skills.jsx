@@ -41,7 +41,7 @@ export default function Skills() {
         className="absolute bottom-[-90px] right-0"
         src="./shapes/skills-2-circle.svg"
       />
-      <div className="pt-5 pb-36 px-0 max-w-[1000px] mx-auto my-0 flex flex-col align-center">
+      <div className="pt-5 pb-36 px-0 max-w-[1040px] mx-auto my-0 flex flex-col align-center">
         <h2 className="text-textLightBlack dark:text-white text-center text-[48px] font-medium tracking-wide m-[58px]">
           {data.skills.title}
         </h2>
