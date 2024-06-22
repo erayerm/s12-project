@@ -1,44 +1,28 @@
-export default function Project({projectObject, data}){
-    return (
-      <div
-        className={`w-[300px] sm:w-[500px] pt-14 dark:text-white rounded-md ${projectObject.lightBgColor} ${projectObject.darkBgColor}`}
-      >
-        <div className="px-10 flex flex-col gap-7">
-          <h4 className="text-3xl font-playfair tracking-[0.05em]">
-            {projectObject.title}
-          </h4>
-          <p className="w-[90%]">{projectObject.info}</p>
-          <div className="flex flex-wrap gap-2 w-[80%]">
-            {projectObject.tags.map((tagName, index) => {
-              return (
-                <p
-                  className="py-1 px-5 font-playfair bg-white dark:bg-[#525252] rounded-3xl"
-                  key={index}
-                >
-                  {tagName}
-                </p>
-              );
-            })}
-          </div>
-          <div className="text-xl font-semibold flex justify-between">
-            <a href={projectObject.linkGitHub} target="_blank" rel="noreferrer">
-              {data.viewOnGithub}
-            </a>
-            <a href={projectObject.linkDemo} target="_blank" rel="noreferrer">
-              {data.goToApp}
-            </a>
-          </div>
-        </div>
-        <div className="relative">
-          <img
-            className="relative w-[300px] sm:w-[500px] pt-20 mb-[-36px] z-20"
-            src="computer.svg"
-          />
-          <img
-            className=" top-[5.5rem] w-[93%] sm:w-auto left-3 absolute sm:top-24 sm:left-[1.31rem]"
-            src={projectObject.photo}
-          />
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+
+export default function Project({ projectObject, data }) {
+
+  return (
+    <div
+      className={`group flex-1 flex relative border-[8px] border-gray-900 basis-[400px] aspect-video pt-14 dark:text-white rounded-md bg-[url(/${projectObject.photo})] ${projectObject.lightBgColor} ${projectObject.darkBgColor}`}
+    >
+      <div className='absolute left-0 right-0 top-0 bottom-0 opacity-70  hover:opacity-100 group flex items-center justify-center z-1 cursor-pointer' style={{
+        backgroundImage: `url(${projectObject.photo})`,
+        backgroundSize: 'cover'
+      }} onClick={() => window.open(projectObject.linkDemo, '_blank')} />
+
+      <div className="text-white bg-gray-900 flex justify-between items-center pl-4 w-full h-[20%] hover:opacity-100 self-end relative z-20">
+        <h3 className='pt-[4px]'>
+          {projectObject.title}
+        </h3>
+        <div className='flex gap-4 text-white text-xl pr-4 h-full pt-[8px]'>
+          <a className='h-full px-5 py-2 bg-gray-800 flex items-center' target='_blank' href={projectObject.linkGitHub}><FontAwesomeIcon icon={faGithub} /></a>
+          <a className='h-full px-5 py-2 bg-gray-800 flex items-center' target='_blank' href={projectObject.linkDemo}><FontAwesomeIcon icon={faGlobe} /></a>
         </div>
       </div>
-    );
+    </div>
+  );
 }

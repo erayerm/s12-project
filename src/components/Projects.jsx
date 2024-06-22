@@ -9,7 +9,7 @@ export default function Projects() {
         <h3 className="pt-20 pb-10 text-center font-medium text-4xl dark:text-white">
           {data.projects.title}
         </h3>
-        <div className="flex flex-wrap gap-20 justify-center">
+        <div className="flex flex-wrap gap-10 gap-y-20 justify-center px-10">
           {data.projects.project.map((projectObject, index) => {
             return (
               <Project

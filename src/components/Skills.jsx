@@ -15,16 +15,16 @@ const skills = [
     photo: "./logos/redux-logo.svg",
   },
   {
-    name: "NODE",
-    photo: "./logos/node-logo.svg",
+    name: "NEXT.JS",
+    photo: "./logos/nextjs-logo.avif",
   },
   {
-    name: "VS CODE",
-    photo: "./logos/vs-logo.svg",
+    name: "JAVA",
+    photo: "./logos/java-logo.jpg",
   },
   {
-    name: "FIGMA",
-    photo: "./logos/figma-logo.svg",
+    name: "SPRING BOOT",
+    photo: "./logos/spring-logo.jpg",
   }
 ];
 
